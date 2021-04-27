@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@types/pg": "^7.14.11",
+    "@types/socket.io": "^2.1.13",
+    "pg": "^8.6.0",
+    "socket.io": "^4.0.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.6"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn ./src/main.ts",
+    "prod": "tsc && node ./dist/main.js"
+  }
+}
