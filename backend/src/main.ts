@@ -34,6 +34,7 @@ io.on('connection', (socket: Socket) => {
         ctx.set('lastSentId', id)
     }
 
+    // send the messages created before the user joined
     messageController.getLastMessageId().then((lastMessageId: number) => {
         if (lastMessageId != ctx.get('lastSentId')) {
             messageController.getMessages(ctx.get('lastSentId'), lastMessageId).then((messages) => {
@@ -60,4 +61,4 @@ io.on('connection', (socket: Socket) => {
 
 });
 
-httpServer.listen(3001);
+httpServer.listen(process.env.PORT);

@@ -10,7 +10,7 @@
     "ts-node-dev": "^1.1.6"
   },
   "scripts": {
-    "dev": "ts-node-dev --respawn ./src/main.ts",
-    "prod": "tsc && node ./dist/main.js"
+    "dev": "PORT=3001 ts-node-dev --respawn ./src/main.ts",
+    "prod": "PORT=3001 tsc && node ./dist/main.js"
   }
 }

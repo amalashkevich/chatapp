@@ -1,11 +1,13 @@
 import {addDisposer, Instance, SnapshotIn, types} from 'mobx-state-tree'
 import {io} from 'socket.io-client';
 
+const url:string = (process.env.REACT_APP_WS_URL as string)
+
 export const $SIO = types.model('$SIO', {
     auth_key: types.string
 })
     .volatile(self => ({
-        sio: io('ws://localhost:3001', {
+        sio: io(url, {
             auth: {
                 token: self.auth_key
             }
